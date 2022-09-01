@@ -1,5 +1,4 @@
 -- CONFIG FILE
--- IMPORTANT NOTE: The main part of the script is done here.
 
 
 -- TABLES
@@ -7,7 +6,9 @@ Config = {}
 Sprites = {}
 Colors = {}
 DisplayModes = {}
-Languages = {}
+
+
+Config.Locale = "es"
 
 
 --------------------------------------------------------------------
@@ -166,61 +167,7 @@ DisplayModes = {
 	['map_and_minimap_not_selectable'] = 8
 }
 
+--------------------------------------------------
+-- Blip custom data is set in client.lua now :) --
+--------------------------------------------------
 
---------------------------------------------------------------------
------------------------- BLIP CUSTOM DATA --------------------------
---------------------------------------------------------------------
-
--- LANGUAGES
-Languages = {
-	['es'] = {
-		['money_laundry'] = "Lavandería de Dinero",
-		['simeon'] = "Simeón"
-	},
-	['en'] = {
-		['money_laundry'] = "Money Laundry",
-		['simeon'] = "Simeon"
-	},
-	['fr'] = {
-		['money_laundry'] = "Blanchiment d'argent",
-		['Simeon'] = "Siméon"
-	},
-	['de'] = {
-		['money_laundry'] = "Geldwäsche",
-		['Simeon'] = "Simeon"
-	},
-	['it'] = {
-		['money_laundry'] = "riciclaggio di denaro",
-		['Simeon'] = "Simeone"
-	}
-}
-
-Config.Language_Selected = "es"
-
-
--- BLIPS
-Config.Blips = {
-	-- Examples
-	{	-- Blip for a Money Laundry
-		label = Languages[Config.Language_Selected]['money_laundry'], 
-		sprite = Sprites['radar_production_money'], 
-		color = Colors['red'], 
-		scale = 1.0,
-		display_mode = DisplayModes['map_and_minimap_selectable'], 
-		short_ranged = true,
-		x = 999.1253, 
-		y = -1785.257, 
-		z = 31.46448
-	},
-	{	-- Blip for Simeon's missions
-		label = Languages[Config.Language_Selected]['simeon'], 
-		sprite = Sprites['radar_simeon_family'], 
-		color = Colors['blue'], 
-		scale = 1.0,
-		display_mode = DisplayModes['map_and_minimap_selectable'], 
-		short_ranged = true,
-		x = -25.0, 
-		y = -1100.0, 
-		z = 32.0
-	}
-}
